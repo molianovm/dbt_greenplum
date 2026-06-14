@@ -1,0 +1,46 @@
+version: 2
+
+sources:
+  - name: ext
+    schema: ext
+    description: "Внешние таблицы PXF, читающие данные из PostgreSQL"
+    tables:
+      - name: src_customer
+        description: "Клиенты"
+        columns:
+          - name: customer_key
+          - name: customer_name
+          - name: customer_address
+          - name: nation_id
+          - name: customer_phone
+          - name: customer_acctbal
+          - name: customer_mktsegment
+          - name: customer_comment
+          - name: updated_at
+      
+      - name: src_supplier
+        description: "Поставщики"
+        columns:
+          - name: supplier_key
+          - name: supplier_name
+          - name: supplier_address
+          - name: nation_id
+          - name: supplier_phone
+          - name: supplier_acctbal
+          - name: supplier_comment
+          - name: updated_at
+      
+      - name: dict_nation
+        description: "Справочник стран"
+        columns:
+          - name: nation_id
+          - name: nation_name
+          - name: region_id
+          - name: nation_comment
+      
+      - name: dict_region
+        description: "Справочник регионов"
+        columns:
+          - name: region_id
+          - name: region_name
+          - name: region_comment

@@ -1,0 +1,62 @@
+version: 2
+
+models:
+  - name: customer
+    description: "Инкрементальная таблица клиентов из PostgreSQL"
+    columns:
+      - name: customer_hashkey
+        description: "Хэш-ключ (источник + customer_key)"
+        tests:
+          - unique
+          - not_null
+      - name: customer_key
+        description: "Бизнес-ключ клиента"
+        tests:
+          - not_null
+      - name: customer_name
+        description: "Имя клиента"
+      - name: customer_address
+        description: "Адрес клиента"
+      - name: nation_id
+        description: "Идентификатор страны"
+      - name: customer_phone
+        description: "Телефон клиента"
+      - name: customer_acctbal
+        description: "Баланс на счёте клиента"
+      - name: customer_mktsegment
+        description: "Рыночный сегмент"
+      - name: customer_comment
+        description: "Комментарий"
+      - name: loaded_at
+        description: "Время загрузки в Greenplum"
+      - name: record_source
+        description: "Источник данных (postgresql)"
+
+  - name: supplier
+    description: "Инкрементальная таблица поставщиков из PostgreSQL"
+    columns:
+      - name: supplier_hashkey
+        description: "Хэш-ключ (источник + supplier_key)"
+        tests:
+          - unique
+          - not_null
+      - name: supplier_key
+        description: "Бизнес-ключ поставщика"
+        tests:
+          - not_null
+      - name: supplier_name
+        description: "Название поставщика"
+      - name: supplier_address
+        description: "Адрес поставщика"
+      - name: nation_id
+        description: "Идентификатор страны"
+      - name: supplier_phone
+        description: "Телефон поставщика"
+      - name: supplier_acctbal
+        description: "Баланс на счёте поставщика"
+      - name: supplier_comment
+        description: "Комментарий"
+      - name: loaded_at
+        description: "Время загрузки в Greenplum"
+      - name: record_source
+        description: "Источник данных (postgresql)"

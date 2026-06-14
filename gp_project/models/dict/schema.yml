@@ -1,0 +1,30 @@
+version: 2
+
+models:
+  - name: nation
+    description: "Справочник стран"
+    columns:
+      - name: nation_id
+        description: "Идентификатор страны"
+        tests:
+          - unique
+          - not_null
+      - name: nation_name
+        description: "Название страны"
+      - name: region_id
+        description: "Идентификатор региона (ссылка на dict.region)"
+      - name: nation_comment
+        description: "Комментарий"
+
+  - name: region
+    description: "Справочник регионов"
+    columns:
+      - name: region_id
+        description: "Идентификатор региона"
+        tests:
+          - unique
+          - not_null
+      - name: region_name
+        description: "Название региона"
+      - name: region_comment
+        description: "Комментарий"
